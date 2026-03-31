@@ -1,0 +1,374 @@
+{
+  "sMNIST": {
+    "n_out": 10,
+    "n_inp": 1,
+    "bs_test": 100,
+    "loader": "mnist",
+    "models": {
+      "ron": {
+        "n_hid": 13000,
+        "default_epochs": 120,
+        "dynamics": {
+          "dt": 0.042,
+          "gamma": 2.7,
+          "epsilon": 0.51,
+          "gamma_range": 1.0,
+          "epsilon_range": 0.5,
+          "rho": 9.0,
+          "inp_scaling": 1.0
+        },
+        "readouts": {
+          "last": { "batch": 120 },
+          "mean": { "batch": 120 },
+          "kor": { "batch": 120, "std": 0.1 }
+        }
+      },
+      "cornn": {
+        "n_hid": 256,
+        "default_epochs": 120,
+        "dynamics": {
+          "dt": 0.042,
+          "gamma": 2.7,
+          "epsilon": 4.7,
+          "gamma_range": 0.0,
+          "epsilon_range": 0.0,
+          "rho": 9.0,
+          "inp_scaling": 1.0
+        },
+        "readouts": {
+          "last": { "batch": 30, "lr": 0.0021 },
+          "mean": { "batch": 30, "lr": 0.0021 },
+          "kor": { "batch": 30, "lr": 0.0021, "std": 1.0 }
+        }
+      },
+      "hcornn": {
+        "n_hid": 256,
+        "default_epochs": 120,
+        "dynamics": {
+          "dt": 0.042,
+          "gamma": 2.7,
+          "epsilon": 4.7,
+          "gamma_range": 0.5,
+          "epsilon_range": 0.5,
+          "rho": 9.0,
+          "inp_scaling": 1.0
+        },
+        "readouts": {
+          "last": { "batch": 30, "lr": 0.0021 },
+          "mean": { "batch": 30, "lr": 0.0021 },
+          "kor": { "batch": 30, "lr": 0.0021, "std": 1.0 }
+        }
+      }
+    }
+  },
+  "psMNIST": {
+    "n_out": 10,
+    "n_inp": 1,
+    "bs_test": 100,
+    "loader": "psmnist",
+    "models": {
+      "ron": {
+        "n_hid": 13000,
+        "default_epochs": 120,
+        "dynamics": {
+          "dt": 0.076,
+          "gamma": 4.0,
+          "epsilon": 0.8,
+          "gamma_range": 1.0,
+          "epsilon_range": 1.0,
+          "rho": 0.9,
+          "inp_scaling": 1.0
+        },
+        "readouts": {
+          "last": { "batch": 120 },
+          "mean": { "batch": 120 },
+          "kor": { "batch": 120, "std": 1.0 }
+        }
+      },
+      "cornn": {
+        "n_hid": 256,
+        "default_epochs": 120,
+        "dynamics": {
+          "dt": 0.076,
+          "gamma": 0.4,
+          "epsilon": 8.0,
+          "gamma_range": 0.0,
+          "epsilon_range": 0.0,
+          "rho": 0.9,
+          "inp_scaling": 1.0
+        },
+        "readouts": {
+          "last": { "batch": 30, "lr": 0.0021 },
+          "mean": { "batch": 30, "lr": 0.0021 },
+          "kor": { "batch": 30, "lr": 0.0021, "std": 1.0 }
+        }
+      },
+      "hcornn": {
+        "n_hid": 256,
+        "default_epochs": 120,
+        "dynamics": {
+          "dt": 0.076,
+          "gamma": 0.4,
+          "epsilon": 8.0,
+          "gamma_range": 1.0,
+          "epsilon_range": 0.5,
+          "rho": 0.9,
+          "inp_scaling": 1.0
+        },
+        "readouts": {
+          "last": { "batch": 30, "lr": 0.0021 },
+          "mean": { "batch": 30, "lr": 0.0021 },
+          "kor": { "batch": 30, "lr": 0.0021, "std": 0.1 }
+        }
+      }
+    }
+  },
+  "npCIFAR-10": {
+    "n_out": 10,
+    "n_inp": 96,
+    "bs_test": 100,
+    "loader": "cifar",
+    "models": {
+      "ron": {
+        "n_hid": 5200,
+        "default_epochs": 120,
+        "dynamics": {
+          "dt": 0.034,
+          "gamma": 1.3,
+          "epsilon": 12.7,
+          "gamma_range": 0.5,
+          "epsilon_range": 0.5,
+          "rho": 9.0,
+          "inp_scaling": 0.1
+        },
+        "readouts": {
+          "last": { "batch": 100 },
+          "mean": { "batch": 100 },
+          "kor": { "batch": 100, "std": 0.1 }
+        }
+      },
+      "cornn": {
+        "n_hid": 128,
+        "default_epochs": 120,
+        "dynamics": {
+          "dt": 0.034,
+          "gamma": 1.3,
+          "epsilon": 12.7,
+          "gamma_range": 0.0,
+          "epsilon_range": 0.0,
+          "rho": 9.0,
+          "inp_scaling": 0.1
+        },
+        "readouts": {
+          "last": { "batch": 30, "lr": 0.0021 },
+          "mean": { "batch": 30, "lr": 0.0021 },
+          "kor": { "batch": 30, "lr": 0.0021, "std": 0.1 }
+        }
+      },
+      "hcornn": {
+        "n_hid": 128,
+        "default_epochs": 120,
+        "dynamics": {
+          "dt": 0.076,
+          "gamma": 1.3,
+          "epsilon": 12.7,
+          "gamma_range": 0.5,
+          "epsilon_range": 0.5,
+          "rho": 9.0,
+          "inp_scaling": 0.1
+        },
+        "readouts": {
+          "last": { "batch": 30, "lr": 0.0021 },
+          "mean": { "batch": 30, "lr": 0.0021 },
+          "kor": { "batch": 30, "lr": 0.0021, "std": 10.0 }
+        }
+      }
+    }
+  },
+  "FordA": {
+    "n_out": 2,
+    "n_inp": 1,
+    "bs_test": 120,
+    "loader": "forda",
+    "models": {
+      "ron": {
+        "n_hid": 100,
+        "default_epochs": 120,
+        "dynamics": {
+          "dt": 0.2,
+          "gamma": 1.0,
+          "epsilon": 5.0,
+          "gamma_range": 0.5,
+          "epsilon_range": 5.0,
+          "rho": 0.9,
+          "inp_scaling": 0.1
+        },
+        "readouts": {
+          "last": { "batch": 120 },
+          "mean": { "batch": 120 },
+          "kor": { "batch": 120, "std": 10.0 }
+        }
+      },
+      "cornn": {
+        "n_hid": 6,
+        "default_epochs": 120,
+        "dynamics": {
+          "dt": 0.25,
+          "gamma": 1.0,
+          "epsilon": 3.0,
+          "gamma_range": 0.0,
+          "epsilon_range": 0.0,
+          "rho": 0.9,
+          "inp_scaling": 0.1
+        },
+        "readouts": {
+          "last": { "batch": 120, "lr": 0.0021 },
+          "mean": { "batch": 30, "lr": 0.0084 },
+          "kor": { "batch": 30, "lr": 0.0084, "std": 1.0 }
+        }
+      },
+      "hcornn": {
+        "n_hid": 8,
+        "default_epochs": 120,
+        "dynamics": {
+          "dt": 0.25,
+          "gamma": 1.0,
+          "epsilon": 0.5,
+          "gamma_range": 1.0,
+          "epsilon_range": 0.5,
+          "rho": 0.9,
+          "inp_scaling": 0.1
+        },
+        "readouts": {
+          "last": { "batch": 120, "lr": 0.0021 },
+          "mean": { "batch": 30, "lr": 0.0021 },
+          "kor": { "batch": 30, "lr": 0.0084, "std": 0.1 }
+        }
+      }
+    }
+  },
+  "Adiac": {
+    "n_out": 37,
+    "n_inp": 1,
+    "bs_test": 30,
+    "loader": "adiac",
+    "models": {
+      "ron": {
+        "n_hid": 100,
+        "default_epochs": 120,
+        "dynamics": {
+          "dt": 0.01,
+          "gamma": 3.0,
+          "epsilon": 5.0,
+          "gamma_range": 1.0,
+          "epsilon_range": 0.5,
+          "rho": 9.0,
+          "inp_scaling": 10.0
+        },
+        "readouts": {
+          "last": { "batch": 120 },
+          "mean": { "batch": 120 },
+          "kor": { "batch": 120, "std": 10.0 }
+        }
+      },
+      "cornn": {
+        "n_hid": 34,
+        "default_epochs": 120,
+        "dynamics": {
+          "dt": 0.1,
+          "gamma": 5.0,
+          "epsilon": 1.0,
+          "gamma_range": 0.0,
+          "epsilon_range": 0.0,
+          "rho": 9.0,
+          "inp_scaling": 10.0
+        },
+        "readouts": {
+          "last": { "batch": 30, "lr": 0.0084 },
+          "mean": { "batch": 30, "lr": 0.0084 },
+          "kor": { "batch": 30, "lr": 0.0084, "std": 1.0 }
+        }
+      },
+      "hcornn": {
+        "n_hid": 44,
+        "default_epochs": 120,
+        "dynamics": {
+          "dt": 0.25,
+          "gamma": 1.0,
+          "epsilon": 0.5,
+          "gamma_range": 1.0,
+          "epsilon_range": 0.5,
+          "rho": 9.0,
+          "inp_scaling": 10.0
+        },
+        "readouts": {
+          "last": { "batch": 30, "lr": 0.0084 },
+          "mean": { "batch": 30, "lr": 0.0084 },
+          "kor": { "batch": 30, "lr": 0.0084, "std": 1.0 }
+        }
+      }
+    }
+  },
+  "uWaveGesture": {
+    "n_out": 8,
+    "n_inp": 1,
+    "bs_test": 500,
+    "loader": "uwave",
+    "models": {
+      "ron": {
+        "n_hid": 666,
+        "default_epochs": 120,
+        "dynamics": {
+          "dt": 0.1,
+          "gamma": 1.0,
+          "epsilon": 10.0,
+          "gamma_range": 2.0,
+          "epsilon_range": 1.0,
+          "rho": 0.99,
+          "inp_scaling": 1.0
+        },
+        "readouts": {
+          "last": { "batch": 120 },
+          "mean": { "batch": 120 },
+          "kor": { "batch": 120, "std": 0.1 }
+        }
+      },
+      "cornn": {
+        "n_hid": 40,
+        "default_epochs": 120,
+        "dynamics": {
+          "dt": 0.1,
+          "gamma": 1.0,
+          "epsilon": 10.0,
+          "gamma_range": 0.0,
+          "epsilon_range": 0.0,
+          "rho": 0.99,
+          "inp_scaling": 1.0
+        },
+        "readouts": {
+          "last": { "batch": 120, "lr": 0.0084 },
+          "mean": { "batch": 30, "lr": 0.0084 },
+          "kor": { "batch": 30, "lr": 0.0084, "std": 1.0 }
+        }
+      },
+      "hcornn": {
+        "n_hid": 55,
+        "default_epochs": 120,
+        "dynamics": {
+          "dt": 0.1,
+          "gamma": 1.0,
+          "epsilon": 1.0,
+          "gamma_range": 1.0,
+          "epsilon_range": 2.0,
+          "rho": 0.99,
+          "inp_scaling": 1.0
+        },
+        "readouts": {
+          "last": { "batch": 30, "lr": 0.0021 },
+          "mean": { "batch": 120, "lr": 0.0084 },
+          "kor": { "batch": 30, "lr": 0.0021, "std": 0.1 }
+        }
+      }
+    }
+  }
+}
