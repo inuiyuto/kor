@@ -176,6 +176,8 @@ def prepare_inputs(
 
 
 def target_indices(targets: torch.Tensor) -> torch.Tensor:
+    if targets.ndim > 1 and targets.shape[-1] == 1:
+        return targets.reshape(-1).long()
     if targets.ndim > 1:
         return targets.argmax(dim=1)
     return targets.long()
